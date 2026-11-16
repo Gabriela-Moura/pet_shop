@@ -1,0 +1,48 @@
+CREATE table pet_shop;
+
+USE pet_shop;
+
+CREATE TABLE clientes (
+    idCliente INT PRIMARY KEY AUTO_INCREMENT,
+    nome TEXT,
+    telefone VARCHAR(20)
+);
+
+CREATE TABLE  animais (
+    idAnimal INT PRIMARY KEY AUTO_INCREMENT,
+    idCliente INT,
+    nome TEXT,
+    especie TEXT,
+    raca TEXT,
+
+    FOREIGN KEY (idCliente) REFERENCES clientes(idCliente)
+);
+
+CREATE TABLE consultas(
+    idConsulta INT PRIMARY KEY AUTO_INCREMENT,
+    idAnimal INT,
+    descricao TEXT,
+    data_hora DATETIME,
+    preco DECIMAL(10,2),
+    
+    FOREIGN KEY (idAnimal) REFERENCES animais(idAnimal)
+)
+
+http://localhost/pet_shop/
+
+use pet_shop;
+
+ALTER TABLE clientes
+ADD COLUMN usuario VARCHAR(100) UNIQUE,
+ADD COLUMN senha VARCHAR(255);
+
+ALTER TABLE consultas
+ADD COLUMN status ENUM('agendada', 'desmarcada');
+
+INSERT INTO clientes (nome, telefone, email, senha)
+VALUES (
+    'Maria Silva',
+    '19999999999',
+    'maria@gmail.com',
+    '$2y$10$abcdefghijklmnopqrstuv123456789012345678901234567890'
+);
