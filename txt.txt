@@ -49,3 +49,5 @@ VALUES (
     'maria@gmail.com',
     '$2y$10$abcdefghijklmnopqrstuv123456789012345678901234567890'
 );
+
+página cadastrar - se 

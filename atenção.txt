@@ -1,0 +1,24 @@
+Informações SAEP:
+
+● Ferramentas de Teste:
+● Ambiente de Teste
+    ○ Servidor de Teste: Apache 
+    ○ Banco de Dados/Versão: MySQL Server 8.4
+    ○ Browser/Versão: Google Chrome 157.0.8103.79 
+    chrome://settings/help
+
+SGBD Utilizado: MySQL Server
+Versão: 8.4
+
+Sistema Operacional: Windows
+Versão: 11
+
+Linguagem de Programação: PHP
+Versão: 8
+
+ID CASO DE TESTE: TS01
+ID REQUISITO FUNCIONAL: RF01
+DESCRICAO: fazer login admin
+PRECONDICAO: não estar cadastrado
+PASSO: preencher login e senha
+RESULTADO ESPERADO: logar no sistema
