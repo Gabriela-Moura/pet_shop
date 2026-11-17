@@ -1,28 +1,28 @@
 
 <?php
 session_start();
-include "conexao.php";
+include "config/conexao.php";
 
 // Verificar se é veterinário
 if (!isset($_SESSION['admin'])) {
-    header("Location: index.html");
+    header("Location: view/index.html");
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: paginaVet.php");
+    header("Location: view/paginaVet.php");
     exit;
 }
 
 $id = filter_input(INPUT_POST, 'idConsulta', FILTER_VALIDATE_INT);
 
 if (!$id) {
-    header("Location: paginaVet.php");
+    header("Location: view/paginaVet.php");
     exit;
 }
 
 $sql = "UPDATE consultas
-        SET status = 'cancelada'
+        SET status = 'desmarcada'
         WHERE idConsulta = ?
         AND status = 'agendada'";
 

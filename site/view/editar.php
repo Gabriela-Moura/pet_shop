@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include "conexao.php";
+include "config/conexao.php";
 
 $id = $_GET['id'];
 
@@ -29,7 +29,7 @@ $horarioAtual = date('H:i', strtotime($consultas['data_hora']));
 
 <h2>Editar Consulta</h2>
 
-<form action="atualizar.php" method="post">
+<form action="controllers/atualizar.php" method="post">
 
     <input type="hidden" name="idConsulta"
     value="<?= $consultas['idConsulta'] ?>">

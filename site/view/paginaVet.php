@@ -1,11 +1,11 @@
 
 <?php
 session_start();
-include "conexao.php";
+include "config/conexao.php";
 
 // Verificar se é veterinário/admin
 if (!isset($_SESSION['admin'])) {
-    header("Location: index.html");
+    header("Location: view/index.html");
     exit;
 }
 

@@ -1,6 +1,5 @@
-
 <?php
-include "conexao.php";
+include "config/conexao.php";
 session_start();
 
 $sql = "SELECT * FROM animais WHERE idCliente = ?";
@@ -12,7 +11,7 @@ $animais = mysqli_stmt_get_result($stmt);
 
 <h2>Agendar Nova Consulta</h2>
 
-<form action="salvar_consulta.php" method="POST">
+<form action="controllers/salvar_consulta.php" method="POST">
 
     Animal:
     <select name="idAnimal" required>

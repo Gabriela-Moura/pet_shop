@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="style.css">
 <?php
-    include "conexao.php";
+    include "config/conexao.php";
 
     $idAnimal = $_POST['idAnimal'];
     $id = $_POST['idConsulta'];

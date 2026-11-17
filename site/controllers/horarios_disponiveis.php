@@ -1,6 +1,6 @@
 
 <?php
-include "conexao.php";
+include "config/conexao.php";
 
 $data = $_GET['data'] ?? '';
 

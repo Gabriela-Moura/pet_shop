@@ -28,8 +28,6 @@ CREATE TABLE consultas(
     FOREIGN KEY (idAnimal) REFERENCES animais(idAnimal)
 )
 
-http://localhost/pet_shop/
-
 use pet_shop;
 
 ALTER TABLE clientes
@@ -38,6 +36,11 @@ ADD COLUMN senha VARCHAR(255);
 
 ALTER TABLE consultas
 ADD COLUMN status ENUM('agendada', 'desmarcada');
+
+ALTER TABLE consultas
+ADD COLUMN cliente_visualizou_cancelamento TINYINT(1) NOT NULL DEFAULT 0;
+
+http://localhost/pet_shop/
 
 INSERT INTO clientes (nome, telefone, email, senha)
 VALUES (

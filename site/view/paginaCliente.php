@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include "conexao.php";
+include "config/conexao.php";
 
 if (!isset($_SESSION['cliente'])) {
-    header("Location: index.html");
+    header("Location: view/index.html");
     exit;
 }
 ?>
@@ -50,8 +50,8 @@ if (mysqli_num_rows($resultado) > 0) {
             </p>
         </td>
         <td>
-            <a href="editar.php?id=<?= $consulta['idConsulta'] ?>">Editar</a>
-            <a href="excluir.php?id=<?= $consulta['idConsulta'] ?>">Excluir</a>
+            <a href="view/editar.php?id=<?= $consulta['idConsulta'] ?>">Editar</a>
+            <a href="controllers/excluir.php?id=<?= $consulta['idConsulta'] ?>">Excluir</a>
         </td>
     </tr>
 
@@ -62,6 +62,7 @@ if (mysqli_num_rows($resultado) > 0) {
     echo "Você ainda não possui consultas cadastradas.";
 }
 ?>
+<a href="sair.php">Sair</a>
 
 </body>
 </html>
