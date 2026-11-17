@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include "config/conexao.php";
+include __DIR__ . "/../config/conexao.php";
 
 $idAnimal = $_POST['idAnimal'];
 $descricao = $_POST['descricao'];
@@ -18,6 +18,6 @@ mysqli_stmt_bind_param($stmt, "isss",
 
 mysqli_stmt_execute($stmt);
 
-header("Location: inicio.php");
+header("Location: ../inicio.php");
 exit;
 ?>

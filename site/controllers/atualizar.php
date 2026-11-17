@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="style.css">
 <?php
-    include "config/conexao.php";
+    include __DIR__ . "/../config/conexao.php";
 
     $idAnimal = $_POST['idAnimal'];
     $id = $_POST['idConsulta'];
@@ -11,5 +10,5 @@
     $sql = "UPDATE consultas SET idAnimal=$idAnimal, descricao='$descricao', data_hora='$data_hora', preco='$preco' WHERE idConsulta=$id";
 
     mysqli_query($conn, $sql);
-    header("Location: inicio.php");
+    header("Location: ../inicio.php");
 ?>

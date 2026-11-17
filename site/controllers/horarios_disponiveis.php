@@ -1,6 +1,6 @@
 
 <?php
-include "config/conexao.php";
+include __DIR__ . "/../config/conexao.php";
 
 $data = $_GET['data'] ?? '';
 

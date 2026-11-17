@@ -1,5 +1,5 @@
 <?php
-include "config/conexao.php";
+include __DIR__ . "/../config/conexao.php";
 session_start();
 
 $sql = "SELECT * FROM animais WHERE idCliente = ?";
@@ -11,7 +11,7 @@ $animais = mysqli_stmt_get_result($stmt);
 
 <h2>Agendar Nova Consulta</h2>
 
-<form action="controllers/salvar_consulta.php" method="POST">
+<form action="../controllers/salvar_consulta.php" method="POST">
 
     Animal:
     <select name="idAnimal" required>
@@ -49,7 +49,7 @@ document.getElementById('data').addEventListener('change', function() {
 
     select.innerHTML = '<option value="">Carregando...</option>';
 
-    fetch('horarios_disponiveis.php?data=' + data)
+    fetch('../controllers/horarios_disponiveis.php?data=' + data)
         .then(response => response.text())
         .then(html => {
             select.innerHTML = html;

@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-include "config/conexao.php";
+include __DIR__ . "/config/conexao.php";
 
 // Verificar se o cliente está logado
 if (!isset($_SESSION['cliente'])) {
@@ -74,6 +74,10 @@ $resultado = mysqli_stmt_get_result($stmt);
     <h1>
         Bem-vindo, <?= htmlspecialchars($_SESSION['nome']); ?>!
     </h1>
+
+    <form action="controllers/sair.php" method="POST">
+        <button type="submit">Sair</button>
+    </form>
 
     <?php foreach ($notificacoes as $aviso): ?>
 
@@ -162,11 +166,11 @@ $resultado = mysqli_stmt_get_result($stmt);
                     <br>
                 </p>
 
-                <a href="editar.php?id=<?= $consulta['idConsulta']; ?>">
+                <a href="view/editar.php?id=<?= $consulta['idConsulta']; ?>">
                     Editar
                 </a>
 
-                <a href="excluir.php?id=<?= $consulta['idConsulta']; ?>">
+                <a href="controllers/excluir.php?id=<?= $consulta['idConsulta']; ?>">
                     Excluir
                 </a>
 

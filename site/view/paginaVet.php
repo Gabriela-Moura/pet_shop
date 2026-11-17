@@ -1,11 +1,11 @@
 
 <?php
 session_start();
-include "config/conexao.php";
+include __DIR__ . "/../config/conexao.php";
 
 // Verificar se é veterinário/admin
 if (!isset($_SESSION['admin'])) {
-    header("Location: view/index.html");
+    header("Location: index.html");
     exit;
 }
 
@@ -38,7 +38,6 @@ while ($consulta = mysqli_fetch_assoc($resultado)) {
 <head>
     <meta charset="UTF-8">
     <title>Página do Veterinário</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -89,7 +88,7 @@ while ($consulta = mysqli_fetch_assoc($resultado)) {
                         </td>
 
                         <td>
-                            <form action="cancelar_consulta.php" method="POST"
+                            <form action="../controllers/cancelar_consulta.php" method="POST"
                                 onsubmit="return confirm('Deseja realmente desmarcar esta consulta?')">
 
                                 <input type="hidden" name="idConsulta"
@@ -112,6 +111,9 @@ while ($consulta = mysqli_fetch_assoc($resultado)) {
     <p>Não há consultas agendadas para hoje ou para os próximos dias.</p>
 
 <?php } ?>
+<form action="../controllers/sair.php" method="POST">
+    <button type="submit">Sair</button>
+</form>
 
 </body>
 </html>
