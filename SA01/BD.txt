@@ -1,0 +1,22 @@
+create database ferramentas;
+
+create table usuario(
+    idUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(50),
+);
+
+create table ferramentas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idUsuario FOREIGN KEY,
+    nome varchar(50),
+    marca varchar(50),
+    modelo varchar(50),
+    material varchar(50),
+    tamanho varchar(50), 
+    peso varchar(50),
+    tensao_eletrica varchar(50),
+    estoque int,
+);
+
+ALTER TABLE usuario ADD usuario VARCHAR(50);
+ALTER TABLE usuario ADD senha VARCHAR(50);
