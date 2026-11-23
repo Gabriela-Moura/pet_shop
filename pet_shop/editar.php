@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include __DIR__ . "/../config/conexao.php";
+include __DIR__ . "/conexao.php";
 
 $id = $_GET['id'];
 
@@ -27,7 +27,7 @@ $horarioAtual = date('H:i', strtotime($consultas['data_hora']));
 
 <h2>Editar Consulta</h2>
 
-<form action="../controllers/atualizar.php" method="post">
+<form action="atualizar.php" method="post">
 
     <input type="hidden" name="idConsulta"
     value="<?= $consultas['idConsulta'] ?>">
@@ -75,7 +75,7 @@ function carregarHorarios(data, horarioSelecionado = '') {
 
     selectHorario.innerHTML = '<option value="">Carregando...</option>';
 
-    fetch('../controllers/horarios_disponiveis.php?data=' + data
+    fetch('horarios_disponiveis.php?data=' + data
         + '&idConsulta=' + idConsulta)
 
         .then(response => response.text())

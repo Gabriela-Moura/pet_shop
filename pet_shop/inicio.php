@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-include __DIR__ . "/config/conexao.php";
+include __DIR__ . "/conexao.php";
 
 // Verificar se o cliente está logado
 if (!isset($_SESSION['cliente'])) {
@@ -75,7 +75,7 @@ $resultado = mysqli_stmt_get_result($stmt);
         Bem-vindo, <?= htmlspecialchars($_SESSION['nome']); ?>!
     </h1>
 
-    <form action="controllers/sair.php" method="POST">
+    <form action="sair.php" method="POST">
         <button type="submit">Sair</button>
     </form>
 
@@ -131,7 +131,7 @@ $resultado = mysqli_stmt_get_result($stmt);
     }
     ?>
 
-    <form action="view/nova_consulta.php" method="POST">
+    <form action="nova_consulta.php" method="POST">
         <button type="submit">Agendar Nova Consulta</button>
     </form>
 
@@ -166,11 +166,11 @@ $resultado = mysqli_stmt_get_result($stmt);
                     <br>
                 </p>
 
-                <a href="view/editar.php?id=<?= $consulta['idConsulta']; ?>">
+                <a href="editar.php?id=<?= $consulta['idConsulta']; ?>">
                     Editar
                 </a>
 
-                <a href="controllers/excluir.php?id=<?= $consulta['idConsulta']; ?>">
+                <a href="excluir.php?id=<?= $consulta['idConsulta']; ?>">
                     Excluir
                 </a>
 
@@ -180,9 +180,8 @@ $resultado = mysqli_stmt_get_result($stmt);
 
     <?php else: ?>
 
-        <p>Você ainda não possui consultas agendadas.</p>
+    <p>Você não possui consultas agendadas.</p>
 
-    <?php endif; ?>
-
+<?php endif; ?>
 </body>
 </html>

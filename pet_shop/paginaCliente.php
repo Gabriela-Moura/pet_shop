@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include __DIR__ . "/../config/conexao.php";
+include __DIR__ . "/conexao.php";
 
 if (!isset($_SESSION['cliente'])) {
     header("Location: index.html");
@@ -46,12 +46,12 @@ if (mysqli_num_rows($resultado) > 0) {
             <p>
             Descrição: <?= htmlspecialchars($consulta['descricao']) ?><br>
             Data: <?= htmlspecialchars($consulta['data_hora']) ?><br>
-            Preço: R$ <?= htmlspecialchars($consulta['preco']) ?><br>
+            Preça: R$ <?= htmlspecialchars($consulta['preco']) ?><br>
             </p>
         </td>
         <td>
             <a href="editar.php?id=<?= $consulta['idConsulta'] ?>">Editar</a>
-            <a href="../controllers/excluir.php?id=<?= $consulta['idConsulta'] ?>">Excluir</a>
+            <a href="excluir.php?id=<?= $consulta['idConsulta'] ?>">Excluir</a>
         </td>
     </tr>
 
@@ -62,7 +62,7 @@ if (mysqli_num_rows($resultado) > 0) {
     echo "Você ainda não possui consultas cadastradas.";
 }
 ?>
-<form action="../controllers/sair.php" method="POST">
+<form action="sair.php" method="POST">
     <button type="submit">Sair</button>
 </form>
 

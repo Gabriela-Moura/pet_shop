@@ -9,6 +9,6 @@
     <p>Faça login para acessar o sistema</p>
 
     <a href="login.php">Login</a>
-    <a href="cadastro.php">Cadastrar-se</a>
+    <a href="cadastrar_se.php">Cadastrar-se</a>
 </body>
 </html>

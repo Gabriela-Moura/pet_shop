@@ -2,10 +2,10 @@
 
 session_start();
 
-include __DIR__ . "/../config/conexao.php";
+include __DIR__ . "/conexao.php";
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: ../view/index.html");
+    header("Location: index.html");
     exit;
 }
 
@@ -27,7 +27,7 @@ $resultado = mysqli_stmt_get_result($stmt);
 
 if ($senha === 'admin' && $usuario === 'admin') {
     $_SESSION['admin'] = true;
-    header("Location: ../view/paginaVet.php");
+    header("Location: paginaVet.php");
     exit;
 }
 
@@ -40,7 +40,7 @@ if (mysqli_num_rows($resultado) == 1) {
         $_SESSION['cliente'] = $cliente['idCliente'];
         $_SESSION['nome'] = $cliente['nome'];
 
-        header("Location: ../inicio.php");
+        header("Location: inicio.php");
         exit;
 
     } else {

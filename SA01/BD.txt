@@ -20,3 +20,10 @@ create table ferramentas (
 
 ALTER TABLE usuario ADD usuario VARCHAR(50);
 ALTER TABLE usuario ADD senha VARCHAR(50);
+
+use ferramentas;
+
+INSERT INTO usuario(idUsuario, nome, usuario, senha) VALUES('1', 'gabi', 'gabi', '123456');
+ALTER TABLE ferramentas ADD estoque_minimo INT;
+
+Amanhão preciso ver sobre as consultas sql, e enviar tudo certinho para o git. Entrada e saida de estoque
