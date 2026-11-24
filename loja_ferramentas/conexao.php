@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 // Altere estes dados se o seu MySQL tiver outro usuário ou senha.
 $servidor = "localhost";

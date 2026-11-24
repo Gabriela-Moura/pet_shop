@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 include "conexao.php";
 include "funcoes.php";
@@ -24,10 +25,10 @@ $salvo = $nome !== null && gravar_produto($conexao, $nome, $marca, $modelo, $cat
     <h1>Cadastrar produto</h1>
     <p><?php echo $salvo ? 'Produto salvo com sucesso.' : ''; ?></p>
     <form method="post" action="cadastro.php">
-        <label>Nome *</label><br><input required name="nome"><br><br>
-        <label>Marca *</label><br><input required name="marca"><br><br>
-        <label>Modelo *</label><br><input required name="modelo"><br><br>
-        <label>Categoria *</label><br><input required name="categoria"><br><br>
+        <label>Nome</label><br><input required name="nome"><br><br>
+        <label>Marca</label><br><input required name="marca"><br><br>
+        <label>Modelo</label><br><input required name="modelo"><br><br>
+        <label>Categoria</label><br><input required name="categoria"><br><br>
         <label>Material ou cabo</label><br><input name="material"><br><br>
         <label>Tamanho</label><br><input name="tamanho"><br><br>
         <label>Peso</label><br><input name="peso"><br><br>

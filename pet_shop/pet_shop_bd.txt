@@ -50,9 +50,3 @@ VALUES (
 );
 
 http://localhost/pet_shop/
-
-if ($consulta['status'] === 'agendada') {?>
-        <span style="color: green;">Agendada</span>
-    <?php} else {?>
-        <span style="color: red;">Cancelada</span>
-    <?php }

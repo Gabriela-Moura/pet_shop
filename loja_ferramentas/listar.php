@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 include "conexao.php";
 include "funcoes.php";
@@ -24,7 +25,19 @@ $produtos = listarProdutos($conexao);
             <td><?php echo htmlspecialchars($produto['categoria']); ?></td>
             <td><?php echo htmlspecialchars($produto['caracteristicas']); ?></td>
             <td><?php echo $produto['estoque']; ?></td>
-            <td><?php echo $produto['estoque_minimo']; ?><?php if ($produto['estoque'] <= $produto['estoque_minimo']) echo " - ESTOQUE BAIXO"; ?></td>
+            <td>
+                <?php echo $produto['estoque_minimo']; ?>
+
+                <?php if ($produto['estoque'] < $produto['estoque_minimo']) { ?>
+                    <span style="color: red;">ESTOQUE BAIXO</span>
+
+                <?php } elseif ($produto['estoque'] == $produto['estoque_minimo']) { ?>
+                    <span style="color: orange;">ESTOQUE MÍNIMO</span>
+
+                <?php } else { ?>
+                    <span style="color: green;">EM ESTOQUE</span>
+                <?php } ?>
+            </td>
             <td><a href="alterar.php?id=<?php echo $produto['id']; ?>">Editar</a> | <a href="listar.php?excluir=<?php echo $produto['id']; ?>">Excluir</a></td>
         </tr>
         <?php } ?>

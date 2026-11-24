@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 // Todas as ações do sistema ficam aqui, de forma procedural e simples.
 

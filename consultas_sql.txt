@@ -1,0 +1,132 @@
+CREATE    -> Cria algo.
+Exemplo: CREATE DATABASE pet_shop;
+
+ALTER     -> Altera a estrutura de uma tabela.
+Exemplo: ALTER TABLE clientes ADD telefone VARCHAR(15);
+
+DROP      -> Exclui uma estrutura (banco ou tabela).
+Exemplo: DROP TABLE clientes;
+
+TRUNCATE  -> Apaga todos os registros de uma tabela, mantendo sua estrutura.
+Exemplo: TRUNCATE TABLE clientes;
+
+-- Criar banco de dados
+CREATE DATABASE pet_shop;
+
+-- Selecionar o banco de dados
+USE pet_shop;
+
+-- Criar tabela
+CREATE TABLE clientes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    telefone VARCHAR(15)
+);
+
+-- Adicionar uma coluna
+ALTER TABLE clientes ADD email VARCHAR(100);
+
+-- Excluir uma tabela
+DROP TABLE clientes;
+
+----------------------------------------------------------------------------------
+
+INSERT INTO -> Insere dados.
+Exemplo:
+INSERT INTO clientes (nome, telefone)
+VALUES ('Ana', '19999999999');
+
+UPDATE      -> Atualiza dados existentes.
+Exemplo:
+UPDATE clientes
+SET telefone = '19988888888'
+WHERE id = 1;
+
+DELETE      -> Exclui registros.
+Exemplo:
+DELETE FROM clientes
+WHERE id = 1;
+
+ATENÇÃO:
+UPDATE e DELETE geralmente precisam de WHERE para afetar somente o registro
+desejado. Sem WHERE, todos os registros podem ser alterados ou excluídos.
+
+-----------------------------------------------------------------------------------
+
+ORDER BY   -> Ordena os resultados.
+Exemplo: SELECT * FROM clientes ORDER BY nome ASC;
+
+GROUP BY   -> Agrupa registros com valores iguais.
+Exemplo:
+SELECT cidade, COUNT(*)
+FROM clientes
+GROUP BY cidade;
+
+HAVING     -> Filtra grupos criados pelo GROUP BY.
+Exemplo:
+SELECT cidade, COUNT(*)
+FROM clientes
+GROUP BY cidade
+HAVING COUNT(*) > 2;
+
+LIMIT      -> Limita a quantidade de resultados.
+Exemplo: SELECT * FROM clientes LIMIT 5;
+
+---------------------------------------------------------------------------------------
+WHERE idade = 18
+
+WHERE idade > 18 AND cidade = 'Mococa'
+
+WHERE cidade = 'Mococa' OR cidade = 'Casa Branca'
+
+WHERE NOT cidade = 'Mococa'
+
+WHERE nome LIKE 'A%'    -- Começa com A
+WHERE nome LIKE '%A'    -- Termina com A
+WHERE nome LIKE '%A%'   -- Contém A
+
+BETWEEN    -> Busca valores dentro de um intervalo.
+Exemplo: WHERE idade BETWEEN 18 AND 30
+
+IN         -> Verifica se o valor está em uma lista.
+Exemplo:
+WHERE cidade IN ('Mococa', 'Campinas')
+
+IS NULL    -> Verifica se o campo está sem valor (NULL).
+Exemplo: WHERE telefone IS NULL
+
+COUNT() -> Conta registros.
+Exemplo: SELECT COUNT(*) FROM clientes;
+
+SUM()   -> Soma valores.
+Exemplo: SELECT SUM(preco) FROM produtos;
+
+AVG()   -> Calcula a média.
+Exemplo: SELECT AVG(preco) FROM produtos;
+
+MAX()   -> Retorna o maior valor.
+Exemplo: SELECT MAX(preco) FROM produtos;
+
+MIN()   -> Retorna o menor valor.
+Exemplo: SELECT MIN(preco) FROM produtos;
+
+SELECT clientes.nome, consultas.animal
+FROM clientes
+INNER JOIN consultas
+ON clientes.id = consultas.idCliente;
+
+------------------------------------------------------------------------------------------
+
+PRIMARY KEY   -> Identifica exclusivamente cada registro.
+FOREIGN KEY   -> Cria relacionamento entre tabelas.
+NOT NULL      -> Impede que o campo receba NULL.
+UNIQUE        -> Impede valores duplicados.
+AUTO_INCREMENT-> Gera números automaticamente.
+DEFAULT       -> Define um valor padrão para a coluna.
+
+$dataCadastro = $_POST['data_cadastro'];
+
+$dataManutencao = date(
+    'Y-m-d',
+    strtotime('+6 months', strtotime($dataCadastro))
+);

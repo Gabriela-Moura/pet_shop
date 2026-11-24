@@ -25,5 +25,3 @@ use ferramentas;
 
 INSERT INTO usuario(idUsuario, nome, usuario, senha) VALUES('1', 'gabi', 'gabi', '123456');
 ALTER TABLE ferramentas ADD estoque_minimo INT;
-
-Amanhão preciso ver sobre as consultas sql, e enviar tudo certinho para o git. Entrada e saida de estoque

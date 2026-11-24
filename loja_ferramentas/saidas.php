@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 include "conexao.php";
 $sql = "SELECT movimentacoes.*, produtos.nome FROM movimentacoes INNER JOIN produtos ON movimentacoes.produto_id = produtos.id WHERE movimentacoes.tipo = 'saida' ORDER BY movimentacoes.data_movimentacao DESC";

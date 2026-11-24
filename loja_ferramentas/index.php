@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head><meta charset="UTF-8"><title>Controle de Estoque</title></head>
+<link rel="stylesheet" href="style.css">
 <body>
     <h1>Controle de Estoque</h1>
     <p><a href="cadastro.php">Cadastrar produto</a></p>

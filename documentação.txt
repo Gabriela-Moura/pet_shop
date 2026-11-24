@@ -1,6 +1,11 @@
 Informações SAEP:
 
-● Ferramentas de Teste:
+● Ferramentas de Teste: XAMPP que usa:
+Apache: para executar os arquivos PHP.
+MySQL: para armazenar e consultar os dados.
+phpMyAdmin: para administrar o banco de dados.
+VS Code: para escrever e editar os códigos.
+
 ● Ambiente de Teste
     ○ Servidor de Teste: Apache 
     ○ Banco de Dados/Versão: MySQL Server 8.4
@@ -22,3 +27,8 @@ DESCRICAO: fazer login admin
 PRECONDICAO: não estar cadastrado
 PASSO: preencher login e senha
 RESULTADO ESPERADO: logar no sistema
+
+Requisitos funcionais:
+RF01: O sistema deve permitir o cadastro, exclusão, edição e listagem de máquinas
+Prioridade:Alta
+Observações: Deve incluir marca, modelo, número de série, etc...

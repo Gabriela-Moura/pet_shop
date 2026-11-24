@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 include "conexao.php";
 include "funcoes.php";
