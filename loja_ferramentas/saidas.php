@@ -3,6 +3,9 @@
 include "conexao.php";
 $sql = "SELECT movimentacoes.*, produtos.nome FROM movimentacoes INNER JOIN produtos ON movimentacoes.produto_id = produtos.id WHERE movimentacoes.tipo = 'saida' ORDER BY movimentacoes.data_movimentacao DESC";
 $saidas = mysqli_query($conexao, $sql);
+if (!$saidas) {
+    die("Erro na consulta SQL: " . mysqli_error($conexao));
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

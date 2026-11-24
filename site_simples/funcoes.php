@@ -15,6 +15,10 @@ function excluirProduto($conexao, $id) {
 function listarProdutos($conexao) {
     $sql = "SELECT * FROM ferramentas";
     return mysqli_query($conexao, $sql);
+
+    if (!$resultado) {
+        die("Erro na consulta: " . mysqli_error($conexao));
+    }
 }
 
 function alterar_dados($conexao, $id, $ferramentas, $nome, $marca, $modelo, $categoria, $material, $tamanho, $peso, $tensao, $caracteristicas, $estoque, $estoque_minimo){

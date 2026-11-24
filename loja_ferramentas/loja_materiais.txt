@@ -14,7 +14,7 @@ CREATE TABLE produtos (
     caracteristicas TEXT,
     estoque INT NOT NULL DEFAULT 0,
     estoque_minimo INT NOT NULL DEFAULT 0,
-    criado_em TIMESTAMP DEFAULT 
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE movimentacoes (
